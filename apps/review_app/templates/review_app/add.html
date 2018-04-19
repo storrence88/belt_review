@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    <meta name="description" content="Login and Registration exercises for Django"> {% load staticfiles %}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'login_app/css/styles.css' %}"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="wrapper">
+         <form action="/book/create" method="POST" class="form-horizontal">
+            {% csrf_token %}
+            <h2>Add a New Book Title and a Review</h2>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Book Title</label>
+                <div class="col-sm-4">
+                    <input type="text" name="book_title" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Choose from the list:</label>
+                <select name="author_list" id="author_list">
+                    <option value="Stephen King">Stephen King</option>
+                    <option value="J.K. Rowling">J.K. Rowling</option>
+                    <option value="Stephanie Meyer">Stephanie Meyer</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Or add a new author:</label>
+                <input type="text" name="new_author" id="new_author">
+            </div>
+            <div class="form-group">
+                <p>Review:</p>
+                <textarea name="review" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-group">
+                <select name="rating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Book and Review">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
